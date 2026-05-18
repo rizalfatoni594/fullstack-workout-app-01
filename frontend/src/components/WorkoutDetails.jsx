@@ -24,15 +24,15 @@ export default function WorkoutDetails({ workout }) {
       <h4>{workout.title}</h4>
 
       <p>
-        <strong>Load (in Kg): </strong>
-        {workout.load}
+        <strong>Load: </strong>
+        {workout.load} kg
       </p>
       <p>
         <strong>Reps: </strong>
-        {workout.reps}
+        {workout.reps} {workout.reps === 1 ? 'time' : 'times'}
       </p>
       <p>
-        <strong>Created: </strong>
+        <strong>Added: </strong>
         {formatDistanceToNow(new Date(workout.createdAt), { addSuffix: true })}
       </p>
       <span className='material-symbols-outlined' onClick={handleClick}>
